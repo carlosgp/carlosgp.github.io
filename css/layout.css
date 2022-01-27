@@ -1,0 +1,223 @@
+.error
+{
+  position: absolute;
+  top: 40%;
+  right: 0px;
+  left: 0px;
+}
+
+body { overflow: hidden; }
+
+header, main, footer { position: absolute; }
+
+header, main
+{
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vmin;
+  min-width: 450px;
+}
+
+header
+{
+  top: 0px;
+  height: 50px;
+  z-index: 1;
+}
+
+main
+{
+  top: 50px;
+  bottom: 20px;
+  overflow: hidden;
+}
+
+footer
+{
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  padding: 1px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1 { margin: 0px; }
+
+#canvas
+{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 80vmin;
+  height: 80vmin;
+}
+
+#canvas > div
+{
+  float: left;
+  box-sizing: border-box;
+}
+
+#canvas.width-8 > div { width: 12.5%; }
+#canvas.height-8 > div { height: 12.5%; }
+#canvas.width-12 > div { width: 8.33333%; }
+#canvas.height-12 > div { height: 8.33333%; }
+#canvas.width-16 > div { width: 6.25%; }
+#canvas.height-16 > div { height: 6.25%; }
+#canvas.width-32 > div { width: 3.125%; }
+#canvas.height-32 > div { height: 3.125%; }
+
+.palette
+{
+  position: fixed;
+  display: none;
+  width: 180px;
+  height: 160px;
+  padding: 30px;
+  text-align: center;
+}
+
+.palette-item, .palette-option
+{
+  display: inline-block;
+  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}
+
+.palette-item:hover, .palette-option:hover, .selected
+{
+  z-index: 1;
+  transform: scale(1.2);
+}
+
+.cursor
+{
+  position: fixed;
+  display: none;
+  z-index: 2;
+  pointer-events: none;
+  width: 24px;
+  height: 24px;
+  margin-top: -20px;
+  margin-left: -2px;
+}
+
+.title
+{
+  left: 5px;
+  position: absolute;
+  line-height: 50px;
+}
+
+.options { right: 0px; }
+
+.size-button, #download-button
+{
+  float: right;
+  display: inline-block;
+  margin: 10px 10px 0px -5px;
+  position: relative;
+}
+
+.size-button
+{
+  width: 30px;
+  height: 30px;
+}
+
+.size-button > table
+{
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-spacing: 2px;
+  table-layout: fixed;
+  width: 26px;
+  height: 26px;
+}
+
+#download-button
+{
+  line-height: 30px;
+  padding: 0px 5px 0px 30px;
+  width: 125px;
+  box-sizing: border-box;
+  margin-left: 5px;
+}
+
+#download-options
+{
+  display: none;
+  position: absolute;
+  top: 28px;
+  right: 10px;
+  width: 125px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.download-option
+{
+  display: block;
+  padding: 5px;
+}
+
+#guide-layer
+{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 3;
+}
+
+#guide-layer > div, .guide-mouse
+{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#guide-layer > div
+{
+  width: 400px;
+  height: 300px;
+  top: 50%;
+}
+
+.guide-mouse, .guide-mouse-left, .guide-mouse-right { box-sizing: border-box; }
+
+.guide-mouse
+{
+  width: 135px;
+  height: 200px;
+  top: 43%;
+}
+
+.guide-mouse-left, .guide-mouse-right
+{
+  width: 50%;
+  height: 80px;
+  display: inline-block;
+}
+
+span.guide-mouse-left-hint, span.guide-mouse-right-hint
+{
+  position: absolute;
+  top: 50px;
+  width: 100px;
+}
+
+span.guide-mouse-left-hint { left: 40px; }
+
+span.guide-mouse-right-hint { right: 30px; }
+
+#guide-button
+{
+  margin: 50px auto 0 auto;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+}

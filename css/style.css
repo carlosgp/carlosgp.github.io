@@ -1,0 +1,226 @@
+.error
+{
+  text-align: center;
+  font-size: 20px;
+}
+
+body
+{
+  font-family: Arial;
+  background-color: #3E4042;
+  user-select: none;
+}
+
+header
+{
+  background: rgb(0,0,0);
+  background: linear-gradient(110deg, rgb(0, 0, 0) 0%, rgb(36, 0, 27) 20px, rgb(149, 0, 116) 96px, rgb(0, 157, 150) 96px, rgb(1, 64, 61) 200px, rgb(0, 0, 0) 300px);
+}
+
+main { background-color: #FFF; }
+
+main:not(.idle) { cursor: none; }
+
+footer
+{
+  color: #999;
+  background-color: #333;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+footer > b
+{
+  font-size: 16px;
+  font-style: italic;
+  vertical-align: middle;
+}
+
+footer > span
+{
+  font-size: 28px;
+  vertical-align: text-bottom;
+}
+
+.title
+{
+  font-size: 46px;
+  letter-spacing: -6px;
+  color: #FFF;
+  font-weight: bold;
+}
+
+#canvas
+{
+  background-color: grey;
+  border: 2px solid #555;
+  border-radius: 2px;
+}
+
+#canvas > div
+{
+  background-color: white;
+  transition: background-color 0.5s;
+  border: 0px solid white;
+}
+
+#canvas > div:hover { border-width: 2px; }
+
+.palette-item, .palette-option { cursor: pointer; }
+
+.palette-item { box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.3); }
+
+.palette-option, .cursor
+{
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.palette-option { opacity: 0.5; }
+
+.palette-option:hover, .selected { opacity: 1; }
+
+.palette-brush { background-image: url(../img/brush.png); }
+
+.palette-bucket { background-image: url(../img/bucket.png); }
+
+.palette-eyedropper { background-image: url(../img/eyedropper.png); }
+
+.cursor { filter: drop-shadow(1px 0px 0px white) drop-shadow(-1px 0px 0px white) drop-shadow(0px 1px 0px white) drop-shadow(0px -1px 0px white) }
+
+.cursor-brush { background-image: url(../img/brush.png); }
+
+.cursor-bucket { background-image: url(../img/bucket.png); }
+
+.cursor-eyedropper { background-image: url(../img/eyedropper.png); }
+
+.size-button, #download-button, #download-options, #guide-button
+{
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.size-button, #download-button, #download-options { background-color: #FFF; }
+
+#guide-button { color: #FFF; background-color: #00BFB6; border: 2px solid #00BFB6; }
+
+.size-button, #download-button, #guide-button
+{
+  text-align: center;
+  background-position: 5%;
+  background-repeat: no-repeat;
+}
+
+.size-button td { background-color: #000; }
+
+.size-button:hover td { background-color: #FFF; }
+
+#download-button { background-image: url(../img/download.png); }
+
+.size-button:hover, #download-button:hover, .download-option:hover, #guide-button:hover { font-weight: bold; }
+
+.size-button:hover, #download-button:hover, .download-option:hover
+{
+  color: #FFF;
+  background-color: #00BFB6;
+}
+
+#guide-button:hover
+{
+  color: #00BFB6;
+  background-color: #FFF;
+}
+
+#download-button:hover { background-image: url(../img/download_w.png); }
+
+#download-options
+{
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 5px 0px rgba(128, 128, 128, 0.2);
+  list-style: none;
+  font-size: 12px;
+}
+
+.download-option
+{
+  text-decoration: none;
+  color: #000;
+}
+
+#guide-layer { background-color: rgba(128, 128, 128, 0.6); }
+
+#guide-layer > div
+{
+  background-color: #FFF;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.guide-mouse, .guide-mouse-left, .guide-mouse-right
+{
+  border-style: solid;
+  border-color: #888;
+}
+
+.guide-mouse
+{
+  border-width: 5px;
+  border-radius: 50px;
+}
+
+.guide-mouse-left, .guide-mouse-right
+{
+  border-width: 0px;
+  border-bottom-width: 2px;
+}
+
+.guide-mouse-left
+{
+  border-right-width: 1px;
+  border-top-left-radius: 45px;
+}
+
+.guide-mouse-right
+{
+  border-left-width: 1px;
+  border-top-right-radius: 45px;
+}
+
+.guide-mouse-left-hint
+{
+  color: #888;
+  background-color: #00BFB6;
+  animation: animation-mouse-left 6s linear infinite;
+}
+
+.guide-mouse-right-hint
+{
+  color: #FFF;
+  background-color: #FFF;
+  animation: animation-mouse-right 6s linear infinite;
+}
+
+span.guide-mouse-left-hint, span.guide-mouse-right-hint
+{
+  background-color: unset !important;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@keyframes animation-mouse-left
+{
+   0% { color: #888; background-color: #00BFB6; }
+  40% { color: #888; background-color: #00BFB6; }
+  50% { color: #FFF; background-color: #FFF; }
+  90% { color: #FFF; background-color: #FFF; }
+}
+@keyframes animation-mouse-right
+{
+   0% { color: #FFF; background-color: #FFF; }
+  40% { color: #FFF; background-color: #FFF; }
+  50% { color: #888; background-color: #00BFB6; }
+  90% { color: #888; background-color: #00BFB6; }
+}
